@@ -4,10 +4,10 @@
 
 This script is created to parse the kml file downloaded from Google Mymaps. It parses the kml file and returns a csv file with lat, lon rows
 
-Things to keep in mind - 
+Things to keep in mind -
 * It will only parse records which have co-ordinates(lat, lon), if you need to get lines, polygons, read the link given at the end
 
-* Language - Python 3+
+* Language - Python 2.7+
 
 * The file required - kml_parser.py
 
