@@ -100,8 +100,8 @@ def write_csv_file(entries, csv_file):
             writer.writerows(entries)
         f.close()
         print("File is written successfully!")
-    except:
-        print("Something is wrong! Unable to write csv")
+    except Exception as e:
+        print("Something is wrong! Unable to write csv\n" + str(e))
     return 0
 
 
