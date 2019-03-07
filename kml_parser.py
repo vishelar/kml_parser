@@ -97,7 +97,8 @@ def write_csv_file(entries, csv_file):
 #         with open(csv_file, 'w', newline='') as f: #does not work with Python 2.7 
         with open(csv_file, 'w') as f:
             writer = csv.writer(f, delimiter=',')
-            writer.writerows(entries)
+            for row in entries:
+                writer.writerow(row)
         f.close()
         print("File is written successfully!")
     except Exception as e:
