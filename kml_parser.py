@@ -86,14 +86,16 @@ def parse_coordinates(val):
     for key in val:
         lon = val[key]['coordinates'].split(',')[:2][0]
         lat = val[key]['coordinates'].split(',')[:2][1]
-        row_format = (key, lat, lon)
+#         row_format = (key, lat, lon) #Issues with ascii encoding in python 2.7 
+        row_format = ("1", lat, lon)
         entries.append(row_format)
     return entries
     
     
 def write_csv_file(entries, csv_file):
     try:
-        with open(csv_file, 'w', newline='') as f:
+#         with open(csv_file, 'w', newline='') as f: #does not work with Python 2.7 
+        with open(csv_file, 'w') as f:
             writer = csv.writer(f, delimiter=',')
             writer.writerows(entries)
         f.close()
